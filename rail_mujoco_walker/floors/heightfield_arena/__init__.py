@@ -1,0 +1,3 @@
+from .heightfield_arena_goals import HEIGHTFIELD_ARENA_GOALS
+from .heightfield_arena import HeightFieldArena
+from .crouching_heightfield_arena import CrouchingHeightfieldArena

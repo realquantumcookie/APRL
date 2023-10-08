@@ -1,0 +1,8 @@
+CONFIG_KP = 60.0
+CONFIG_KD = 5.0
+CONFIG_ACTION_INTERPOLATION = False
+CONFIG_ACTION_RANGE = 0.3 # similar to 2.0x offset in previous versions, limit joint action range to 30% of joint range
+CONFIG_TARGET_VELOCITY = 0.5
+CONFIG_USE_ENERGY_PENALTY = True
+CONFIG_REAL_POWER_PROTECT_FACTOR = 0.4
+CONFIG_FLOOR_SCALE = 20.0
