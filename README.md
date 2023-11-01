@@ -27,6 +27,10 @@ pip install -e .
 
 > Special note with Windows users: Jax does not offer official cuda support for Windows binary wheels. However, you can use instructions in [this experimental repo](https://github.com/cloudhan/jax-windows-builder) to install a cuda-enabled version of Jax. Our code uses `jax[cuda111]==0.3.25`. Make sure that the `jax` and `jaxlib` packages are both installed with the correct version. Also make sure that your nvidia driver shows support for cuda 11 when you run `nvidia-smi`.
 
+## Setting up the real robot
+
+[Real Robot Setup](RealSetup.md)
+
 ## Training
 
 Example command to run real training

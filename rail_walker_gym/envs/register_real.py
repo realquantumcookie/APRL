@@ -2,7 +2,7 @@ import gym
 from .register_helper import iter_formatted_register_env
 from rail_walker_interface import JoystickPolicy, BaseWalker, WalkerVelocitySmoother, JoystickEnvImpl
 from rail_real_walker import DummyVelocityEstimator, IntelRealsenseT265Estimator, IntelRealsenseT265EstimatorRemote, Go1ForwardKinematicsVelocityProvider, KalmanFilterFusedVelocityEstimator
-from rail_real_walker.robots import Go1RealWalker, Go1RealWalkerRemote
+from rail_real_walker.robots import Go1RealWalker
 from typing import Any
 from .wrappers import *
 from ..joystick_policy import *

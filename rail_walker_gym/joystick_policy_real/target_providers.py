@@ -90,7 +90,7 @@ class JoystickPolicyGo1JoystickTargetProvider(JoystickPolicyTargetProvider[Go1Re
         self._remaining_hold_max_steps = self.max_hold_steps
         self._target_delta_yaw = self._new_target_delta_yaw
         self._target_velocity = self._new_target_velocity
-        return super().after_step(Robot, info_dict, randomState)
+        return super().after_step_target(Robot, info_dict, randomState)
 
     def reset_target(
         self, 
@@ -136,12 +136,15 @@ class JoystickPolicyGo1JoystickSimpleTargetProvider(JoystickPolicyGo1JoystickTar
             np.pi / 2
         )
     
+    def is_target_velocity_fixed(self) -> bool:
+        return True
+
     def step_target(self, Robot: Go1RealWalker, info_dict: dict[str, Any], randomState: np.random.RandomState) -> None:
         super().step_target(Robot, info_dict, randomState)
         sign_ntdy = np.sign(self._new_target_delta_yaw)
         self._new_target_delta_yaw = sign_ntdy * np.pi / 2
-        self._new_target_velocity = 0.5 if sign_ntdy == 0 else 0.3
-        #self._new_target_velocity = 0.8
+        #self._new_target_velocity = 0.5 if sign_ntdy == 0 else 0.3
+        self._new_target_velocity = 0.4
 
     def reset_target(
         self, 
@@ -153,7 +156,7 @@ class JoystickPolicyGo1JoystickSimpleTargetProvider(JoystickPolicyGo1JoystickTar
         super().reset_target(Robot, info_dict, termination_provider_triggered, randomState)
         sign_ntdy = np.sign(self._new_target_delta_yaw)
         self._new_target_delta_yaw = sign_ntdy * np.pi / 2
-        self._new_target_velocity = 0.5 if sign_ntdy == 0 else 0.3
-        #self._new_target_velocity = 0.8
+        #self._new_target_velocity = 0.5 if sign_ntdy == 0 else 0.3
+        self._new_target_velocity = 0.4
         self._target_delta_yaw = self._new_target_delta_yaw
         self._target_velocity = self._new_target_velocity
